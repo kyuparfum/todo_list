@@ -41,8 +41,8 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 class UserCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
+        fields = "__all__"
         extra_kwargs = {"password": {"write_only": True, }}
-        exclude = ["email"]
 
     def update(self, instance, validated_data):
         user = super().update(instance, validated_data)

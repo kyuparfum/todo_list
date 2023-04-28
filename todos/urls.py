@@ -2,6 +2,9 @@ from django.urls import path
 from todos import views
 
 urlpatterns = [
-    path('todo/', views.TodoView.as_view(), name='todo_view'),
-    # path('<int:todo_id>/', views.TodoDetailView.as_view(), name='todo_detail_view'),
+    path('', views.TodoListView.as_view(), name='todo_list_view'),
+    path('todo/', views.TodoListCreateView.as_view(),
+         name='todo_list_create_view'),
+    path('todo/<int:todo_list_id>', views.TodoListEditView.as_view(),
+         name='todo_list_update_view'),
 ]

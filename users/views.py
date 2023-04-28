@@ -28,7 +28,7 @@ class UserListView(APIView):
         serializer = UserCreateSerializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-class LoginView(APIView):
+class LoginView(APIView):# 로그인확인용
     permission_classes=[permissions.IsAuthenticated]# 로그인됐을 때만 작업가능.
     def get(self, request):
         return Response("get test")
@@ -46,6 +46,7 @@ class UserEditView(APIView):
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response("권한이 없습니다.", status=status.HTTP_403_FORBIDDEN)
+        
     def delete(self,request,user_id):
         user = get_object_or_404(User, id=user_id)
         if request.user == user:

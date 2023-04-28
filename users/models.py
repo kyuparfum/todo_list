@@ -3,7 +3,7 @@ from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None, **kwarg):
+    def create_user(self, email, password=None):
         """
         Creates and saves a User with the given email and password.
         """
@@ -12,7 +12,6 @@ class UserManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
-            **kwarg,
         )
 
         user.set_password(password)
@@ -26,7 +25,6 @@ class UserManager(BaseUserManager):
 
         user = self.create_user(
             email,
-            age=0,
             password=password,
             
         )
