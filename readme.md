@@ -1,4 +1,4 @@
-# todo_list
+# Todo_List
 DRF(Django Rest Framework)를 사용해서 작업한 부트캠프 django심화 프로젝트입니다.
 # API명세
 #### users
