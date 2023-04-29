@@ -2,11 +2,14 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework import permissions
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 import users
 from users.models import User
 from users.serializers import CustomTokenObtainPairSerializer, UserCreateSerializer, UserSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
+
 
 
 
@@ -54,3 +57,4 @@ class UserEditView(APIView):
             return Response("탈퇴 되었습니다.", status=status.HTTP_204_NO_CONTENT)
         else:
             return Response("권한이 없습니다.", status=status.HTTP_403_FORBIDDEN)
+        

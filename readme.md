@@ -13,10 +13,10 @@ DRF(Django Rest Framework)를 사용해서 작업한 부트캠프 django심화 �
 
 #### todos
 - 할일 조회
-  - GET
+  - GET 
 - 할일 추가
-  - POST
+  - POST todo/
 - 할일 수정
-  - PUT
+  - PUT todo/<int:todo_list_id>
 - 할일 삭제
-  - DELETE
+  - DELETE todo/<int:todo_list_id>
