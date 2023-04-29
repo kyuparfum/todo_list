@@ -1,4 +1,4 @@
-# todo_list
+# Todo_List
 DRF(Django Rest Framework)를 사용해서 작업한 부트캠프 django심화 프로젝트입니다.
 # API명세
 #### users
@@ -18,5 +18,7 @@ DRF(Django Rest Framework)를 사용해서 작업한 부트캠프 django심화 �
   - POST todo/
 - 할일 수정
   - PUT todo/<int:todo_list_id>
+- 할일 완료
+  - PUT todo/complete/<int:todo_list_id>
 - 할일 삭제
   - DELETE todo/<int:todo_list_id>
